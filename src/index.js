@@ -9,9 +9,7 @@ class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			textData: `
-# Welcome to my React Markdown Previewer!
-`
+			textData: `# Welcome to my React Markdown Previewer!`
 		}
 	this.handlechangeTextArea = this.handlechangeTextArea.bind(this);
 
@@ -25,42 +23,20 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-			<Editor text={this.state.textData}
-			/>
-			<Previewer text={this.state.textData}/>
-			</div>
-		)
-	}
-}
-
-export default App;
-
-
-class Editor extends React.Component {
-
-	
-	render() {
-		return(
-			<div className='editorField'>
-				<textarea type='text' defaultValue={this.props.text} className='editorFieldTextArea' onChange={this.props.handlechangeTextArea}/>
-			</div>
-		)
-	}
-}
-
-class Previewer extends React.Component {
-	render() {
-		return(
-			<div className='previewerField'>
-				<div className='previewerFieldText'>
-					{marked(this.props.text)};
-
+				<div className='editorField'>
+					<textarea type='text' defaultValue={this.state.textData} className='editorFieldTextArea' onChange={this.props.handlechangeTextArea}/>
+				</div>
+				<div className='previewerField'>
+					<div className='previewerFieldText'>
+						<div dangerouslySetInnerHTML = {{__html: marked(this.state.textData)}} />
+					</div>
 				</div>
 			</div>
 		)
 	}
 }
 
+export default App;
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
