@@ -4,27 +4,28 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import marked from "marked";
 
-
+let marked = require('marked');
 class App extends React.Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			textData: `# Welcome to my React Markdown Previewer!`
-		}
-	this.handlechangeTextArea = this.handlechangeTextArea.bind(this);
-
+	state = {
+		markdown: `# Welcome to my React Markdown Previewer!`
 	}
-	handlechangeTextArea(){
+	//updateMarkdown = updateMarkdown.bind(this);
+
+	
+	updateMarkdown = function(markdown){
 		console.log('ss');
+				console.log(e);
+
 		this.setState({
-			textData:'s'
+			textData:{markdown}
 		})
 	}
 	render() {
+		let markdown = this.state;	
 		return (
 			<div>
 				<div className='editorField'>
-					<textarea type='text' defaultValue={this.state.textData} className='editorFieldTextArea' onChange={this.props.handlechangeTextArea}/>
+					<textarea type='text' value={markdown} className='editorFieldTextArea' onChange={(event)=>this.updateMarkdown(event.target.value))} />
 				</div>
 				<div className='previewerField'>
 					<div className='previewerFieldText'>
