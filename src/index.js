@@ -8,7 +8,11 @@ import * as serviceWorker from './serviceWorker';
 	class App extends React.Component {
 		//create state object with initial text
 		state = {
-			markdown: '# Welcome to my markdown previewer<br/> ## Use input field to put your text and field above to preview what you wrote<br /> Feel free to use GitHub"s and HTML markdown to style you text<br/> # ENJOY!'
+			markdown: `
+# Welcome to my markdown previewer 
+## Use input field to put your text and field above to preview what you wrote
+## Feel free to use GitHub"s and HTML markdown to style you text
+# ENJOY!`
 		}
 		//updateMarkdown = updateMarkdown.bind(this);
 
@@ -26,7 +30,7 @@ import * as serviceWorker from './serviceWorker';
 			return (
 				<div>
 					<div className='editorField'>
-						<textarea type='text' value={markdown} className='editorFieldTextArea' onChange={(event)=>this.updateMarkdown(event.target.value)} />
+						<textarea type='text' id="editor" value={markdown} className='editorFieldTextArea' onChange={(event)=>this.updateMarkdown(event.target.value)} />
 					</div>
 					<div className='previewerField'>
 						<div className='previewerFieldText'>

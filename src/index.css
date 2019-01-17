@@ -8,7 +8,7 @@
     font-size: 12px;
 
 }
-.editorFieldTextArea {
+#editor {
 	width: 100%;
 	height: 400px;
 }
