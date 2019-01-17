@@ -11,8 +11,29 @@ import * as serviceWorker from './serviceWorker';
 			markdown: `
 # Welcome to my markdown previewer 
 ## Use input field to put your text and field above to preview what you wrote
-## Feel free to use GitHub"s and HTML markdown to style you text
-# ENJOY!`
+## Feel **free** to use GitHub"s and HTML markdown to style you text
+1. Item 1
+1. Item 2
+ 
+http://github.com - automatic!
+[GitHub](http://github.com)
+![GitHub Logo](http://icons-for-free.com/icon/download-github_logo_website_icon-2639.ico)
+Format: ![Alt Text](url)
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+I think you should use an
+\`<addr>\` element here instead.
+\`\`\`
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+\`\`\`
+
+`
 		}
 		//updateMarkdown = updateMarkdown.bind(this);
 
@@ -34,7 +55,7 @@ import * as serviceWorker from './serviceWorker';
 					</div>
 					<div className='previewerField'>
 						<div className='previewerFieldText'>
-							<div dangerouslySetInnerHTML = {{__html: marked(this.state.markdown)}} />
+							<div id='preview' dangerouslySetInnerHTML = {{__html: marked(this.state.markdown)}} />
 						</div>
 					</div>
 				</div>
