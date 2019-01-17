@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 	let marked = require('marked');
 	class App extends React.Component {
-		//create state object with initial text
+		//create state object with initial text(just for FCC test)
 		state = {
 			markdown: `
 # Welcome to my markdown previewer 
@@ -37,24 +37,27 @@ function fancyAlert(arg) {
 		}
 		//updateMarkdown = updateMarkdown.bind(this);
 
-		
+		//function to update the state when print smth into it
 		updateMarkdown = function(markdown){
-			console.log('ss');
 
 			this.setState({
-				markdown:markdown
+				markdown:markdown //markdown as a value optional es6
 			})
 		}
 		render() {
+			//hold what ever this.state is es6
 			let {markdown} = this.state;	
+
 			console.log({markdown});
 			return (
 				<div>
 					<div className='editorField'>
+					{/*on chhange run function which runs update function above with parameter of current input value*/}
 						<textarea type='text' id="editor" value={markdown} className='editorFieldTextArea' onChange={(event)=>this.updateMarkdown(event.target.value)} />
 					</div>
 					<div className='previewerField'>
 						<div className='previewerFieldText'>
+							{/*this display the value of state with markdown applied*/}
 							<div id='preview' dangerouslySetInnerHTML = {{__html: marked(this.state.markdown)}} />
 						</div>
 					</div>
