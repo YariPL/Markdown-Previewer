@@ -2,40 +2,41 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import marked from "marked";
+//import marked from "marked";
 
-let marked = require('marked');
-class App extends React.Component {
-	state = {
-		markdown: `# Welcome to my React Markdown Previewer!`
-	}
-	//updateMarkdown = updateMarkdown.bind(this);
+	let marked = require('marked');
+	class App extends React.Component {
+		//create state object with initial text
+		state = {
+			markdown: '# Welcome to my markdown previewer<br/> ## Use input field to put your text and field above to preview what you wrote<br /> Feel free to use GitHub"s and HTML markdown to style you text<br/> # ENJOY!'
+		}
+		//updateMarkdown = updateMarkdown.bind(this);
 
-	
-	updateMarkdown = function(markdown){
-		console.log('ss');
-				console.log(e);
+		
+		updateMarkdown = function(markdown){
+			console.log('ss');
 
-		this.setState({
-			textData:{markdown}
-		})
-	}
-	render() {
-		let markdown = this.state;	
-		return (
-			<div>
-				<div className='editorField'>
-					<textarea type='text' value={markdown} className='editorFieldTextArea' onChange={(event)=>this.updateMarkdown(event.target.value))} />
-				</div>
-				<div className='previewerField'>
-					<div className='previewerFieldText'>
-						<div dangerouslySetInnerHTML = {{__html: marked(this.state.textData)}} />
+			this.setState({
+				markdown:markdown
+			})
+		}
+		render() {
+			let {markdown} = this.state;	
+			console.log({markdown});
+			return (
+				<div>
+					<div className='editorField'>
+						<textarea type='text' value={markdown} className='editorFieldTextArea' onChange={(event)=>this.updateMarkdown(event.target.value)} />
+					</div>
+					<div className='previewerField'>
+						<div className='previewerFieldText'>
+							<div dangerouslySetInnerHTML = {{__html: marked(this.state.markdown)}} />
+						</div>
 					</div>
 				</div>
-			</div>
-		)
+			)
+		}
 	}
-}
 
 export default App;
 
