@@ -9,6 +9,7 @@ import * as serviceWorker from './serviceWorker';
 		//create state object with initial text(just for FCC test)
 		state = {
 			markdown: `
+# <center>SAMPLE FOR FREECODECAMP</center>
 # Welcome to my markdown previewer 
 ## Use input field to put your text and field above to preview what you wrote
 ## Feel **free** to use GitHub"s and HTML markdown to style you text
