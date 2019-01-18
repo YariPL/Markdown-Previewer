@@ -50,16 +50,14 @@ function fancyAlert(arg) {
 
 			console.log({markdown});
 			return (
-				<div>
+				<div className='divForEverything'>
 					<div className='editorField'>
 					{/*on chhange run function which runs update function above with parameter of current input value*/}
 						<textarea type='text' id="editor" value={markdown} className='editorFieldTextArea' onChange={(event)=>this.updateMarkdown(event.target.value)} />
 					</div>
 					<div className='previewerField'>
-						<div className='previewerFieldText'>
 							{/*this display the value of state with markdown applied*/}
 							<div id='preview' dangerouslySetInnerHTML = {{__html: marked(this.state.markdown)}} />
-						</div>
 					</div>
 				</div>
 			)

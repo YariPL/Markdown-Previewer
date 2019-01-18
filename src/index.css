@@ -1,27 +1,35 @@
 .editorField {
-	width: 700px;
     margin: 0 auto;
-    background: antiquewhite;
     padding: 30px;
-    border: 2p;
-    border: 2px solid black;
-    font-size: 12px;
-
 }
 #editor {
-	width: 100%;
-	height: 400px;
+	width: 80vw;
+    height: 150px;
+    padding: 12px;
+    border: 10px solid aliceblue;
+    border-radius: 15px;
+}
+#preview {
+	width: 80vw;
+    padding: 12px;
+    border: 10px solid aliceblue;
+    border-radius: 15px;
 }
 .previewerField {
-	width: 700px;
-    margin: 0 auto;
-    background: antiquewhite;
-    padding: 30px;
-    border: 2p;
-    border: 2px solid black;
-    font-size: 12px;
+	
 
+ margin: 0 auto;
+    padding: 30px;
 }
 .previewerFieldText{ 
-	width: 100%;
+width: 80vw;
+    height: 150px;
+    padding: 12px;
+    border: 10px solid aliceblue;
+    border-radius: 15px;
+
+ }
+ .divForEverything {
+ 	display: flex;
+ 	flex-direction: column;
  }
